@@ -4,31 +4,31 @@
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <meta name="robots" content="noindex, nofollow"/>
-<meta name="theme-color" content="#111111"/>
+<meta name="theme-color" content="#0f0e0c"/>
 <meta name="apple-mobile-web-app-title" content="Coach"/>
 <title>Coach Access · Ziad Elfeky</title>
 <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
 <style>
-@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=DM+Serif+Display&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,500;0,600;1,400&family=Poppins:wght@300;400;500;600&display=swap');
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
 :root{
-  --ink:#111111;--mid:#555555;--soft:#999999;--rule:#e2dfd9;
-  --bg:#f6f4f0;--white:#ffffff;--gold:#b8966a;--gold-dark:#9a7c52;--gold-faint:#faf6f0;
-  --red:#c0392b;--green:#2d6a4f;--green-bg:#eef7f2;
+  --ink:#f1ece2;--mid:#a39d91;--soft:#7d776d;--rule:rgba(241,236,226,.12);
+  --bg:#0f0e0c;--white:#181613;--gold:#c9a96e;--gold-dark:#dcc08e;--gold-faint:#211c15;
+  --red:#e58a7a;--green:#86cfa6;--green-bg:#14251c;
 }
-body{font-family:'DM Sans',sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;}
+body{font-family:'Poppins',system-ui,-apple-system,sans-serif;background:var(--bg);color:var(--ink);min-height:100vh;}
 button,input{font-family:inherit;}
 .hdr{background:var(--ink);color:#fff;padding:34px 20px 28px;}
 .hdr-inner{max-width:560px;margin:0 auto;display:flex;align-items:center;gap:14px;}
-.mono{width:46px;height:46px;border-radius:50%;border:1px solid rgba(184,150,106,.5);display:flex;align-items:center;justify-content:center;font-family:'DM Serif Display',serif;color:var(--gold);font-size:17px;flex-shrink:0;}
+.mono{width:46px;height:46px;border-radius:50%;border:1px solid rgba(184,150,106,.5);display:flex;align-items:center;justify-content:center;font-family:'Lora',Georgia,serif;color:var(--gold);font-size:17px;flex-shrink:0;}
 .hdr-eye{font-size:11px;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);}
-.hdr h1{font-family:'DM Serif Display',serif;font-weight:400;font-size:26px;line-height:1.15;margin-top:3px;}
+.hdr h1{font-family:'Lora',Georgia,serif;font-weight:400;font-size:26px;line-height:1.15;margin-top:3px;}
 .wrap{max-width:560px;margin:0 auto;padding:28px 16px 60px;}
 .hidden{display:none !important;}
 
 /* login */
 .card{background:var(--white);border:1px solid var(--rule);border-radius:14px;padding:24px 20px;}
-.card-title{font-family:'DM Serif Display',serif;font-size:21px;}
+.card-title{font-family:'Lora',Georgia,serif;font-size:21px;}
 .card-sub{font-size:13px;color:var(--mid);margin-top:4px;margin-bottom:18px;}
 .inp{width:100%;background:var(--white);border:1px solid var(--rule);border-radius:8px;padding:12px 14px;font-size:15px;color:var(--ink);outline:none;margin-bottom:10px;-webkit-appearance:none;}
 .inp:focus{border-color:var(--gold);}
@@ -49,7 +49,7 @@ button,input{font-family:inherit;}
 .tile.primary .t-icon{background:rgba(184,150,106,.16);}
 .t-icon svg{width:20px;height:20px;}
 .t-text{flex:1;min-width:0;}
-.t-name{font-family:'DM Serif Display',serif;font-size:17.5px;line-height:1.2;}
+.t-name{font-family:'Lora',Georgia,serif;font-size:17.5px;line-height:1.2;}
 .t-desc{font-size:12px;color:var(--soft);margin-top:3px;line-height:1.4;}
 .tile.primary .t-desc{color:rgba(255,255,255,.55);}
 .badge{flex-shrink:0;font-size:11px;font-weight:700;letter-spacing:.02em;padding:5px 9px;border-radius:20px;background:var(--gold-faint);color:var(--gold-dark);border:1px solid rgba(184,150,106,.35);white-space:nowrap;}
@@ -59,9 +59,45 @@ button,input{font-family:inherit;}
 .arrow{color:var(--rule);flex-shrink:0;}
 .tile.primary .arrow{color:rgba(255,255,255,.35);}
 .note{font-size:11.5px;color:var(--soft);text-align:center;line-height:1.6;margin-top:6px;}
-.summary{font-family:'DM Serif Display',serif;font-size:20px;margin:0 2px 18px;color:var(--gold-dark);}
+.summary{font-family:'Lora',Georgia,serif;font-size:20px;margin:0 2px 18px;color:var(--gold-dark);}
 .summary.quiet{color:var(--mid);}
 .tile.has-new:not(.primary){border-color:var(--gold);background:var(--gold-faint);}
+
+/* ---- Dark brand layer ---- */
+:root{color-scheme:dark;}
+body{font-weight:300;-webkit-font-smoothing:antialiased;}
+input,select,textarea{color:var(--ink);}
+input::placeholder,textarea::placeholder{color:#6b665d;}
+.hdr,.hero{background:var(--bg) !important;color:var(--ink) !important;border-bottom:1px solid var(--rule);}
+.footer{background:var(--bg) !important;border-top:1px solid var(--rule);color:var(--soft) !important;}
+.btn-primary,.apply{background:var(--gold) !important;color:#15120e !important;font-weight:500 !important;}
+.btn-primary:disabled{background:#4a453d !important;color:#9a948a !important;}
+.apply:hover{filter:brightness(1.08);}
+.scale-btn.on,.rating-btn.on,.score-badge{background:var(--gold) !important;color:#15120e !important;border-color:var(--gold) !important;}
+.client-card.unread .client-name::after{color:#15120e !important;}
+.cat-icon{background:var(--white) !important;border:1px solid var(--rule);}
+.nav{border-bottom-color:var(--rule) !important;}
+.lbl,.cert-name{font-weight:500 !important;}
+/* Kraft, home and release forms */
+.day-btn.on,.duration-num{background:var(--gold) !important;color:#15120e !important;border-color:var(--gold) !important;}
+.medical-box,.consent-box{background:var(--amber-bg,#211a0e) !important;border-color:var(--amber-border,#4d3b17) !important;}
+.consent-title{color:var(--amber,#e2b860) !important;}
+.consent-text,.consent-check span,.service-card p,.clothing-warning p,.disclaimer-section p,.disclaimer-section ul li{color:var(--mid) !important;}
+.payment-banner{background:var(--white) !important;border:1px solid var(--rule);}
+.badge-new{background:#14212c !important;color:#8cc4ec !important;}
+.badge-ret{background:var(--green-bg) !important;color:var(--green) !important;}
+#desc-vip,#desc-private{background:var(--gold-faint) !important;border-color:rgba(201,169,110,.35) !important;}
+#desc-vip p,#desc-private p{color:var(--mid) !important;}
+.clothing-radio-dot{background:#15120e !important;}
+/* Coach hub */
+.tile.primary{background:var(--gold-faint) !important;border-color:var(--gold) !important;color:var(--ink) !important;}
+.tile.primary .t-desc{color:var(--mid) !important;}
+.t-icon{background:var(--bg) !important;border:1px solid var(--rule);}
+.tile.primary .t-icon{background:rgba(201,169,110,.12) !important;}
+.btn{background:var(--gold) !important;color:#15120e !important;}
+.btn:disabled{background:#4a453d !important;color:#9a948a !important;}
+.tile.primary .badge{color:#15120e !important;}
+.inp{background:var(--white) !important;color:var(--ink) !important;}
 </style>
 </head>
 <body>
